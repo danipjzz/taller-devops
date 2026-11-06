@@ -14,4 +14,5 @@ def test_sin_duplicados_ni_nulos():
     assert df["id_venta"].notna().all()
 def test_montos_positivos():
     df = transformar(datos_crudos())
-    assert (df["monto"] > 0).all()
+    # Cambiamos > 0 por > 1000 para que falle con los datos de prueba
+    assert (df["monto"] > 1000).all()
